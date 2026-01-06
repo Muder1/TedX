@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  font-family: 'Inter', Helvetica, Arial, sans-serif;
+  
+  /* Fallback background color */
+  background-color: #000;
+  
+  /* Background Image with Dark Overlay */
+  /* The linear-gradient adds a dark tint so the white text is readable */
+
+  color: #fff;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* =========================================
+   DEEP SPACE BACKGROUND (Pure Black)
+   ========================================= */
+
+/* =========================================
+   DEEP SPACE BACKGROUND (Pure Black - High Density)
+   ========================================= */
+
+.star-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: #000000; /* Pure Black */
+  overflow: hidden;
+  z-index: 0;
+}
+
+/* --- Layer 1: Smallest Stars (High Density) --- */
+.stars-1 {
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 
+    /* Original set */
+    124px 356px #FFF, 1746px 872px #FFF, 48px 1243px #FFF, 1634px 463px #FFF,
+    375px 1863px #FFF, 1862px 73px #FFF, 946px 1637px #FFF, 126px 836px #FFF,
+    /* Added set 1 */
+    1200px 200px #FFF, 450px 1100px #FFF, 1500px 900px #FFF, 300px 400px #FFF,
+    600px 100px #FFF, 800px 1500px #FFF, 1100px 1800px #FFF, 1900px 1200px #FFF,
+    /* Added set 2 */
+    250px 600px #FFF, 1400px 300px #FFF, 750px 900px #FFF, 1650px 1450px #FFF,
+    50px 1900px #FFF, 950px 650px #FFF, 1350px 850px #FFF, 1750px 250px #FFF,
+    /* Added set 3 (Filling gaps) */
+    420px 120px #FFF, 860px 420px #FFF, 1320px 1640px #FFF, 1780px 1320px #FFF,
+    240px 1560px #FFF, 580px 880px #FFF, 1140px 540px #FFF, 1920px 920px #FFF,
+    735px 45px #FFF, 1426px 1473px #FFF, 542px 673px #FFF, 124px 1746px #FFF,
+    1835px 372px #FFF, 624px 128px #FFF, 1546px 1263px #FFF, 347px 927px #FFF;
+  animation: animStar 50s linear infinite;
+}
+
+.stars-1:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 1px;
+  height: 1px;
+  background: transparent;
+  box-shadow: 
+    /* MUST MATCH BOX-SHADOW ABOVE EXACTLY */
+    124px 356px #FFF, 1746px 872px #FFF, 48px 1243px #FFF, 1634px 463px #FFF,
+    375px 1863px #FFF, 1862px 73px #FFF, 946px 1637px #FFF, 126px 836px #FFF,
+    1200px 200px #FFF, 450px 1100px #FFF, 1500px 900px #FFF, 300px 400px #FFF,
+    600px 100px #FFF, 800px 1500px #FFF, 1100px 1800px #FFF, 1900px 1200px #FFF,
+    250px 600px #FFF, 1400px 300px #FFF, 750px 900px #FFF, 1650px 1450px #FFF,
+    50px 1900px #FFF, 950px 650px #FFF, 1350px 850px #FFF, 1750px 250px #FFF,
+    420px 120px #FFF, 860px 420px #FFF, 1320px 1640px #FFF, 1780px 1320px #FFF,
+    240px 1560px #FFF, 580px 880px #FFF, 1140px 540px #FFF, 1920px 920px #FFF,
+    735px 45px #FFF, 1426px 1473px #FFF, 542px 673px #FFF, 124px 1746px #FFF,
+    1835px 372px #FFF, 624px 128px #FFF, 1546px 1263px #FFF, 347px 927px #FFF;
+}
+
+/* --- Layer 2: Medium Stars (Increased Density) --- */
+.stars-2 {
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 
+    632px 146px #FFF, 1536px 832px #FFF, 245px 1263px #FFF, 873px 363px #FFF,
+    1263px 1632px #FFF, 182px 745px #FFF, 936px 136px #FFF, 1735px 632px #FFF,
+    /* Added Medium Stars */
+    1100px 400px #FFF, 400px 1500px #FFF, 1600px 200px #FFF, 800px 1000px #FFF,
+    200px 1800px #FFF, 1400px 1200px #FFF, 600px 600px #FFF, 1800px 1600px #FFF;
+  animation: animStar 100s linear infinite;
+  opacity: 0.6;
+}
+
+.stars-2:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 2px;
+  height: 2px;
+  background: transparent;
+  box-shadow: 
+    632px 146px #FFF, 1536px 832px #FFF, 245px 1263px #FFF, 873px 363px #FFF,
+    1263px 1632px #FFF, 182px 745px #FFF, 936px 136px #FFF, 1735px 632px #FFF,
+    1100px 400px #FFF, 400px 1500px #FFF, 1600px 200px #FFF, 800px 1000px #FFF,
+    200px 1800px #FFF, 1400px 1200px #FFF, 600px 600px #FFF, 1800px 1600px #FFF;
+}
+
+/* --- Layer 3: Large Accent Stars (Red/Cyan) --- */
+.stars-3 {
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 
+    846px 372px #eb0028, 163px 1273px #00ffff, 1462px 643px #eb0028,
+    /* Added Accents */
+    1700px 150px #00ffff, 400px 1800px #eb0028, 1100px 900px #00ffff,
+    1900px 1400px #eb0028;
+  animation: animStar 150s linear infinite;
+  opacity: 0.8;
+}
+
+.stars-3:after {
+  content: " ";
+  position: absolute;
+  top: 2000px;
+  width: 3px;
+  height: 3px;
+  background: transparent;
+  box-shadow: 
+    846px 372px #eb0028, 163px 1273px #00ffff, 1462px 643px #eb0028,
+    1700px 150px #00ffff, 400px 1800px #eb0028, 1100px 900px #00ffff,
+    1900px 1400px #eb0028;
+}
+
+@keyframes animStar {
+  from { transform: translateY(0px); }
+  to { transform: translateY(-2000px); }
+}
+
+/* Ensure content is visible */
+.container {
+  position: relative;
+  z-index: 2;
+}
