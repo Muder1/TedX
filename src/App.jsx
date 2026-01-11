@@ -1,5 +1,6 @@
 import Podcast from "./Podcast.jsx";
 import "./App.css";
+import logoImg from "./assets/tedx-logo1.png";
 
 /* ===================== DATA ===================== */
 
@@ -161,7 +162,11 @@ const App = () => {
       </div>
       <div className="container">
         <header className="header">
-          <h1 data-text="TEDxConversations">TEDxConversations</h1>
+          <img 
+            src={logoImg} 
+            alt="TEDxConversations" 
+            className="header-logo" 
+          />
           <p>Insightful Podcasts, One Idea at a Time.</p>
         </header>
 

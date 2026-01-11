@@ -7,49 +7,41 @@
 }
 
 /* --- Header Styling --- */
+/* --- Header Styling --- */
 .header {
   margin-bottom: 5rem;
   position: relative;
   z-index: 10;
+  text-align: center;
 }
+
+/* IMAGE LOGO STYLES */
+.header-logo {
+  max-width: 600px; /* Maximum width for large screens */
+  width: 90%;       /* On mobile, take up 90% of screen width */
+  height: auto;     /* Maintain aspect ratio */
+  display: block;
+  margin: 0 auto 1rem auto; /* Center the image */
+  
+  /* Optional: Adds a slight glow behind the logo if it has a transparent background */
+  filter: drop-shadow(0 0 20px rgba(235, 0, 40, 0.3)); 
+}
+
+/* Subtitle Styling */
+.header p {
+  color: #a0a0a0;
+  font-size: 1.2rem;
+  font-weight: 400;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  opacity: 0;
+  animation: tracking-in 1.5s cubic-bezier(0.215, 0.610, 0.355, 1.000) forwards;
+  animation-delay: 0.5s;
+}
+
+/* ... Remove the .header h1, .header h1::before, and @keyframes glitch... styles as they are no longer needed ... */
 
 /* THE GLITCH EFFECT */
-.header h1 {
-  font-size: 4rem; /* Made bigger */
-  font-weight: 900;
-  text-transform: uppercase;
-  position: relative;
-  display: inline-block;
-  color: #fff;
-  letter-spacing: -2px;
-  margin-bottom: 1rem;
-}
-
-/* Creates the red/blue offset layers */
-.header h1::before,
-.header h1::after {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: #000; /* Matches body bg to hide main text */
-}
-
-.header h1::before {
-  left: 2px;
-  text-shadow: -2px 0 #eb0028; /* TEDx Red */
-  clip: rect(44px, 450px, 56px, 0);
-  animation: glitch-anim 5s infinite linear alternate-reverse;
-}
-
-.header h1::after {
-  left: -2px;
-  text-shadow: -2px 0 #00ffff; /* Cyan offset */
-  clip: rect(44px, 450px, 56px, 0);
-  animation: glitch-anim-2 5s infinite linear alternate-reverse;
-}
 
 /* Subtitle Styling */
 .header p {
@@ -97,25 +89,7 @@
   100% { letter-spacing: 2px; opacity: 1; filter: blur(0); }
 }
 
-@keyframes glitch-anim {
-  0% { clip: rect(30px, 9999px, 10px, 0); }
-  5% { clip: rect(70px, 9999px, 90px, 0); }
-  10% { clip: rect(35px, 9999px, 15px, 0); }
-  15% { clip: rect(10px, 9999px, 80px, 0); }
-  20% { clip: rect(90px, 9999px, 100px, 0); }
-  100% { clip: rect(50px, 9999px, 60px, 0); }
-}
 
-@keyframes glitch-anim-2 {
-  0% { clip: rect(15px, 9999px, 60px, 0); }
-  5% { clip: rect(80px, 9999px, 20px, 0); }
-  10% { clip: rect(20px, 9999px, 90px, 0); }
-  15% { clip: rect(90px, 9999px, 10px, 0); }
-  20% { clip: rect(10px, 9999px, 50px, 0); }
-  100% { clip: rect(60px, 9999px, 30px, 0); }
-}
-
-/* App.css - Add to bottom */
 
 /* --- Horizontal Scroll Container --- */
 .podcast-row {
@@ -227,4 +201,51 @@
 .container {
   position: relative;
   z-index: 2; 
+}
+
+/* =========================================
+   SEASON SPECIFIC BACKGROUNDS
+   ========================================= */
+
+/* Common styles for all seasons to ensure text is readable */
+.season {
+  position: relative;
+  padding: 4rem 2rem; /* Add padding so the background is visible around content */
+  border-radius: 20px; /* Optional: Rounded corners look nice with backgrounds */
+  overflow: hidden;
+  margin-bottom: 4rem; /* Space between seasons */
+  
+  /* Text readability shadow */
+  text-shadow: 0 2px 4px rgba(0,0,0,0.8);
+}
+
+/* --- SEASON 3 BACKGROUND --- */
+.season.s3 {
+  background-image: url('./assets/s3.png'); /* If in src folder */
+  /* OR use url('/bg-season3.svg') if in public folder */
+  
+  background-size: cover;    /* Stretch to fit */
+  background-position: center;
+  background-repeat: no-repeat;
+  
+  /* Optional: Adds a dark tint over the SVG so text pops */
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
+}
+
+/* --- SEASON 2 BACKGROUND --- */
+.season.s2 {
+  background-image: url('./assets/s2_2.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
+}
+
+/* --- SEASON 1 BACKGROUND --- */
+.season.s1 {
+  background-image: url('./bg-season1.svg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.3);
 }
